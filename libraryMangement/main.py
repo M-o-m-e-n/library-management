@@ -7,7 +7,10 @@ def main():
         print("\n📖 Library Management System")
         print("1. Add Book")
         print("2. Display Books")
-        print("3. Exit")
+        print("3. Borrow Book")
+        print("4. Return Book")
+        print("5. View Borrowed Books")
+        print("6. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -22,6 +25,18 @@ def main():
             library.displayBooks()
 
         elif choice == "3":
+            user = input("Enter your name: ")
+            isbn = input("Enter ISBN of book to borrow: ")
+            library.borrowBook(isbn, user)
+
+        elif choice == "4":
+            isbn = input("Enter ISBN of book to return: ")
+            library.returnBook(isbn)
+
+        elif choice == "5":
+            library.displayBorrowedBooks()
+
+        elif choice == "6":
             print("Exiting... 📚")
             break
 
